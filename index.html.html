@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Día de las Flores Amarillas 🌻</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #fff8dc, #fdf2d0, #ffe57f);
+    background-size: 300% 300%;
+    animation: fondoAnimado 12s ease infinite;
+  }
+
+  @keyframes fondoAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  h1 {
+    margin-top: 30px;
+    font-size: 3em;
+    color: #e1a500;
+    text-shadow: 0 0 8px rgba(225,165,0,0.6), 0 0 15px rgba(225,165,0,0.4);
+    animation: aparecerTitulo 2s ease-in-out, brilloSuave 5s infinite alternate;
+  }
+
+  h2 {
+    margin-top: 5px;
+    font-size: 2em;
+    color: #444;
+    animation: aparecerSub 2.3s ease-in-out;
+  }
+
+  @keyframes aparecerTitulo {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes aparecerSub {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes brilloSuave {
+    from { text-shadow: 0 0 5px #ffd54f, 0 0 10px #ffeb3b; }
+    to { text-shadow: 0 0 10px #ff9800, 0 0 20px #ffc107; }
+  }
+
+  .carta {
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    animation: aparecerCarta 1.5s ease-in-out;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    border: 2px solid #ffd54f; /* borde más delgado y elegante */
+  }
+
+  .carta:hover {
+    transform: rotateY(3deg) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  }
+
+  .carta p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  @keyframes aparecerCarta {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  /* girasoles cayendo */
+  .girasol {
+    position: fixed;
+    top: -100px;
+    width: 45px;
+    height: 45px;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/009/383/908/non_2x/sunflower-clipart-design-illustration-free-png.png);
+    background-size: cover;
+    animation: caer linear infinite;
+    z-index: 1;
+    opacity: 0.9;
+  }
+
+  @keyframes caer {
+    from { transform: translateY(-100px) rotate(0deg); }
+    to { transform: translateY(110vh) rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+
+<h1>Día de las Flores Amarillas 🌻</h1>
+<h2>Para Leslie</h2>
+
+<div class="carta">
+  <p>
+    Holiii Lessss🌻<br><br>
+    Feliz Día de las Flores Amarillas 💛🌼. Hoy 21 de septiembre quise hacer algo distinto para ti. No quise regalarte solo unas flores amarillas, quise regalarte palabras y detalles que te hagan sonreír, porque tú eres esa personita que se merece cosas lindas, sinceras y llenas de luz.
+  
+    <br><br>
+    Cuando pienso en flores amarillas pienso en alegría, en energía bonita, en brillo… y en ti. Porque en serio Lessss, tienes algo que me encanta: esa mirada tan linda que parece atrapar el sol, esos ojitos que brillan más que cualquier flor amarilla, y esa sonrisa que ilumina hasta el día más gris. 🌻✨
+
+Me gusta que sigamos platicando poco a poco, con calma, sin prisas… y me encanta poder decirte que eres una persona especial para mí. Hoy solo quiero desearte que este día y todos los que vengan te llenen de cosas buenas, de momentos felices, de sueños cumplidos y de gente que te quiera bien.
+ 
+    <br><br>
+    Ojalá algún día podamos ver juntos un campo lleno de flores amarillas y reírnos como siempre. Por ahora solo quería dejarte este detallito, para que cuando lo leas te saque una sonrisa y te acuerdes de mí de una forma bonita.
+
+Feliz 21 de septiembre Lessss 💛🌼
+Con mucho cariño: Ale ✨ 
+  </p>
+</div>
+
+<script>
+  // crear girasoles dinámicos
+  function crearGirasol() {
+    const girasol = document.createElement("div");
+    girasol.classList.add("girasol");
+    girasol.style.left = Math.random() * window.innerWidth + "px";
+    girasol.style.width = girasol.style.height = (30 + Math.random() * 40) + "px";
+    girasol.style.animationDuration = (8 + Math.random() * 5) + "s";
+    document.body.appendChild(girasol);
+
+    setTimeout(() => {
+      girasol.remove();
+    }, 14000);
+  }
+
+  setInterval(crearGirasol, 600);
+</script>
+
+</body>
+</html>
